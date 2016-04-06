@@ -52,6 +52,15 @@ while True:
     elif token[0] == 'square':
         result = square(token[1])
         print result
+    elif token[0] == 'cube':
+        result = cube(token[1])
+        print result
+    elif token[0] == 'pow':
+        result = pow(token[1], token[2])
+        print result
+    elif token[0] == 'mod':
+        result = mod(token[1], token[2])
+        print result
     else:
         print "error: do not understand input"
         break 
