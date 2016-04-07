@@ -1,6 +1,17 @@
 
 from arithmetic import *
 
+def format_input():
+    """
+    Converts user's raw input to a list of strings.
+
+    """
+    original_input = raw_input("> ")
+    original_input = original_input.strip()
+    formatted_input = original_input.split(" ")
+    return formatted_input
+
+
 
 def convert_tokens_to_int(user_input):
     """
@@ -16,33 +27,25 @@ def convert_tokens_to_int(user_input):
             item = int(item)
             new_user_input.append(item)
         else:
-            new_user_input.append(item)
+            print "Your input is invalid. Please try again."
+            return None
     return new_user_input
 
-# #def validate_ints( num_ints_needed, lst):
-#     if num_ints_needed ==1
-#         if token[0] is not an int
-#         throw error
-#     elif num_ints_needed == 2
-#         if token[0] not an int or if token[2[]]
+
 
 
 
 # repeat forever:
 while True:
-    #     read input
-    original_input = raw_input("> ")
-    #print original_input
-    #remove leading and trailing spaces
-    original_input = original_input.strip()
-    #print original_input 
-    #     tokenize input
-    split_list = original_input.split(" ")
-    #print split_list
-    #Remove first element from list, assign to new variable. 
+    split_list = format_input() 
     first_token = split_list.pop(0)
     #change token elements 1-n to integers
     tokens = convert_tokens_to_int(split_list)
+    if tokens == None:
+        continue
+    elif len(tokens) > 2:
+        print "You entered too many numbers. Please try again"
+        continue
     #print tokens
     #     if the first token is 'q', quit
     if first_token == 'q' or first_token == 'Q':
