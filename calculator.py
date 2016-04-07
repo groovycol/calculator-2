@@ -12,12 +12,10 @@ def format_input():
 
 
 def convert_tokens_to_int(user_input):
-    """
-    Converts digits in list to integers; appends all elements to a new list.
+    """Converts digits in list to integers; appends all elements to a new list.
 
-    Returns None if user input is invalid.
+    Returns None if user input is invalid."""
 
-    """
     new_user_input = []
     for item in user_input:
         if item == '':
@@ -37,10 +35,8 @@ def convert_tokens_to_int(user_input):
 
  
 def calculator():
-    """
-    Takes user input, calculates arithmetic functions.
+    """ Takes user input, calculates arithmetic functions."""
 
-    """
     while True:
         split_list = format_input() 
         first_token = split_list.pop(0)
