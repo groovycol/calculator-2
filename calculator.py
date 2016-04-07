@@ -2,11 +2,8 @@
 from arithmetic import *
 
 def format_input():
-    """
+    """ Collects user's raw input and returns it as a list."""
 
-    Collects user's raw input and returns it as a list.
-
-    """
     original_input = raw_input("> ")
     original_input = original_input.strip()
     formatted_input = original_input.split(" ")
@@ -24,7 +21,7 @@ def convert_tokens_to_int(user_input):
     new_user_input = []
     for item in user_input:
         if item == '':
-            pass
+            continue
         elif item.isdigit():
             item = int(item)
             new_user_input.append(item)
@@ -35,8 +32,6 @@ def convert_tokens_to_int(user_input):
         print "You entered too many numbers. Please try again"
         return None
     return new_user_input
-
-
 
 
 
