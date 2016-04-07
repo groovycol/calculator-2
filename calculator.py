@@ -22,9 +22,9 @@ def convert_tokens_to_int(user_input):
 # repeat forever:
 while True:
     #     read input
-    input = raw_input("> ")
+    original_input = raw_input("> ")
     #     tokenize input
-    split_list = input.split(" ")
+    split_list = original_input.split(" ")
     #change token elements 1-n to integers
     tokens = convert_tokens_to_int(split_list)
     #     if the first token is 'q', quit
@@ -32,29 +32,21 @@ while True:
         break
     #     otherwise decide which math function to call based on the tokens we read
     elif tokens[0] == '+':
-        result = add(num1=tokens[1], num2=tokens[2])
-        print result
+        print add(num1=tokens[1], num2=tokens[2])
     elif tokens[0] == '-':
-        result = subtract(tokens[1], tokens[2])
-        print result
+        print subtract(num1=tokens[1], num2=tokens[2])
     elif tokens[0] == '*':
-        result = multiply(tokens[1], tokens[2])
-        print result
+        print multiply(num1=tokens[1], num2=tokens[2])
     elif tokens[0] == '/':
-        result = divide(tokens[1], tokens[2])
-        print result
+        print divide(num1=tokens[1], num2=tokens[2])
     elif tokens[0] == 'square':
-        result = square(tokens[1])
-        print result
+        print square(num1=tokens[1])
     elif tokens[0] == 'cube':
-        result = cube(tokens[1])
-        print result
+        print cube(num1=tokens[1])
     elif tokens[0] == 'pow':
-        result = pow(tokens[1], tokens[2])
-        print result
+        print pow(num1=tokens[1], num2=tokens[2])
     elif tokens[0] == 'mod':
-        result = mod(tokens[1], tokens[2])
-        print result
+        print mod(num1=tokens[1], num2=tokens[2])
     else:
         print "error: do not understand input"
-        break 
+        continue 
