@@ -29,6 +29,9 @@ def convert_tokens_to_int(user_input):
         else:
             print "Your input is invalid. Please try again."
             return None
+    if len(new_user_input) > 2:
+        print "You entered too many numbers. Please try again"
+        return None
     return new_user_input
 
 
@@ -43,9 +46,9 @@ while True:
     tokens = convert_tokens_to_int(split_list)
     if tokens == None:
         continue
-    elif len(tokens) > 2:
-        print "You entered too many numbers. Please try again"
-        continue
+    # #elif len(tokens) > 2:
+    #     print "You entered too many numbers. Please try again"
+    #     continue
     #print tokens
     #     if the first token is 'q', quit
     if first_token == 'q' or first_token == 'Q':
